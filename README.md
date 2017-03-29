@@ -15,4 +15,6 @@ You're coworkers have already built out a __PetsPage__ component to render out a
 2. Visiting '/pets/:id' should display some detailed information about a particular pet.
 3. Visiting '/pets/new' should display a form to create a new Pet. After create, the user should be redirected back to '/pets'.
 
-> Note: the tests do no check for the routes. They only test the individual components. You will need to manually check that the routes are working in the browser by running `npm install && npm start` and going to localhost:8080
+> Note: the tests do no check for the routes. They only test the individual components. You will need to manually check that the routes are working in the browser by running `npm install && npm start` and going to localhost:3000
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/react-redux-nested-routes-lab'>React Redux Nested Routes Lab</a> on Learn.co and start learning to code for free.</p>
