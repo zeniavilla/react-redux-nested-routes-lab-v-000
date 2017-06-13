@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { addPet } from '../actions';
-import { browserHistory } from 'react-router';
 
 class PetsNew extends Component {
   constructor(props) {
