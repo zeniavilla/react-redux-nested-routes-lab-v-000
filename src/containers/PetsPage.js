@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { fetchPets } from '../actions';
-import { Link } from 'react-router';
 
 class PetsPage extends Component {
 
@@ -13,21 +11,10 @@ class PetsPage extends Component {
   render() {
     return (
       <div>
-        <div className='col-md-4'>
-          <ul>
-            {this.props.pets.map(pet =>
-              <li key={pet.id}>
-                <Link to={`/pets/${pet.id}`}>{ pet.name }</Link>
-              </li>
-            )}
-          </ul>
-          <Link to="/pets/new">Add a Pet</Link>
-        </div>
-        {this.props.children}
+        Pets Page
       </div>
     );
   }
-
 };
 
 const mapStateToProps = state => {
