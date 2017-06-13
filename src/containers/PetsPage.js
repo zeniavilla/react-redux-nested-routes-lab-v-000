@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 class PetsPage extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchPets();
   }
 
@@ -30,16 +30,10 @@ class PetsPage extends Component {
 
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     pets: state.pets
   };
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPets: bindActionCreators(fetchPets, dispatch)
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PetsPage);
+export default connect(mapStateToProps, { fetchPets })(PetsPage);

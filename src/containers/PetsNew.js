@@ -12,34 +12,35 @@ class PetsNew extends Component {
       description: '',
     };
   }
-  handleOnSubmit(event) {
+
+  handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addPet(this.state);
-    browserHistory.push('/pets');
+    const { addPet, history } = this.props
+    addPet(this.state);
+    history.push('/pets');
   }
-  handleOnNameChange(event) {
+
+  handleOnChange = event => {
     this.setState({
-      name: event.target.value
+      [event.target.name]: event.target.value
     });
   }
-  handleOnDescriptionChange(event) {
-    this.setState({
-      description: event.target.value
-    });
-  }
+
   render() {
     return (
       <div>
         <h2>Add a Pet</h2>
-        <form onSubmit={(event) => this.handleOnSubmit(event)} >
+        <form onSubmit={this.handleOnSubmit} >
           <input
             type="text"
             placeholder="Name"
-            onChange={(event) => this.handleOnNameChange(event)} />
+            name="name"
+            onChange={this.handleOnChange} />
           <input
             type="text"
             placeholder="Description"
-            onChange={(event) => this.handleOnDescriptionChange(event)} />
+            name="description"
+            onChange={this.handleOnChange} />
           <input
             type="submit"
             value="Add Pet" />
@@ -49,10 +50,4 @@ class PetsNew extends Component {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPet: bindActionCreators(addPet, dispatch)
-  };
-};
-
-export default connect(null, mapDispatchToProps)(PetsNew);
+export default connect(null, { addPet })(PetsNew);

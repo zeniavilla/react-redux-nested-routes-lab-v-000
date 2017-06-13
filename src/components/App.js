@@ -1,12 +1,13 @@
 import React from 'react';
-import NavBar from './NavBar';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import PetsPage from '../containers/PetsPage';
 
 export default (props) => {
   return (
-    <div>
-      <NavBar title="See All The Pets!" href="/pets"/>
-      { props.children }
-    </div>
+    <Router>
+      <div>
+        <Link to="pets">See All The Pets!</Link>
+      </div>
+    </Router>
   )
 };
